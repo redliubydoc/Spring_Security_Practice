@@ -5,12 +5,13 @@ import com.raj.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("*")
+@RequestMapping(path = "/private")
 public class TestController {
     private final UserDAO userDAO;
 
@@ -21,7 +22,6 @@ public class TestController {
 
     @GetMapping(path = "/test")
     public User test() {
-        Optional<User> userO = userDAO.getUserByUserId("user_001");
-        return userO.get();
+        return userDAO.getUserByUserId("user_001").get();
     }
 }
