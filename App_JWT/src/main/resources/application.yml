@@ -1,0 +1,6 @@
+server:
+  port: 9095
+
+spring:
+  main:
+    allow-circular-references: true
