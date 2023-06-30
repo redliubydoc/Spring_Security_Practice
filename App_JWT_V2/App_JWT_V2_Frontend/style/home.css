@@ -1,0 +1,125 @@
+:root {
+  --color-primary-1: rgb(0,139,139);
+  --color-secondary-1: rgb(0, 255, 255);
+  --color-secondary-2: rgb(0, 255, 175);
+  --color-secondary-3: rgb(100, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+  /* border: 1px solid red; */
+}
+
+/*===========================================================
+    This is to center the main component
+===========================================================*/
+
+body {
+  background-color: var(--color-primary-1);
+  color: white;
+}
+
+#container-main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  min-height: 100vh;
+
+  transition-duration: 700ms;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+}
+
+#welcome-msg {
+  margin: 80px 0px 50px 0px;
+}
+
+#container-table {
+  width: 100%;
+  padding: 0px 50px 0px 50px;
+}
+
+#container-table > table {
+  width: 100%;
+}
+
+#container-table td {
+
+  padding: 7px 20px 7px 20px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  border-collapse: collapse;
+
+  width: 50%;
+}
+
+#container-table td:nth-child(2) {
+  text-align: left;
+}
+
+#btn-logout {
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  height: 40px;
+  width: 100px;
+  border: none;
+  outline: none;
+
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+
+  border-radius: 5px;
+  background-color: var(--color-secondary-1);
+
+  transition-duration: 1400ms;
+  transition-property: box-shadow;
+  transition-timing-function: ease-out;
+}
+
+#btn-logout:hover {
+  background-color: var(--color-secondary-2);
+  transition-duration: 100ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in-out;
+}
+
+#btn-logout:active {
+  background-color: var(--color-secondary-3);
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 101;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.overlay.hide {
+  display: none;
+}
+
+#firstName,
+#lastName,
+#emailId {
+  text-transform: capitalize;
+}

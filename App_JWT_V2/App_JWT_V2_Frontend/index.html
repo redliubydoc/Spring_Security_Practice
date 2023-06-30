@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  </head>
+
+  <body>
+    <div class="overlay hide">
+      <img src="drawables/loading_002.gif">
+    </div>
+
+    <div class="container-login">
+      <h1 class="heading">fonebook</h1>
+      <form>
+        <div class="container-ip-username"> 
+          <i class="fa fa-user"></i>
+          <input id="ip-username" type="text" placeholder="Username">
+        </div>
+        <div class="container-ip-password"> 
+          <i class="fa fa-lock"></i>
+          <input id="ip-password" type="password" placeholder="Password">
+        </div>
+        <div class="container-btn-login">
+          <button id="btn-login">Login</button>
+        </div>
+      </form>
+
+      <!-- hidden elements -->
+      <a id="page-navigator" href="" hidden></a>
+
+      <!-- javascript -->
+      <script src="script/AppConstant.js"></script>
+      <script src="script/Util.js"></script>
+      <script src="script/service/AuthNService.js"></script>
+      <script src="script/Login.js"></script>
+    </div>
+  </body>
+</html>

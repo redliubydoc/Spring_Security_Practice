@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/public/authn")
@@ -36,7 +39,7 @@ public class SignOnController {
         String username = request.getUsername();
         String password = request.getPassword();
 
-        if (username.isEmpty() || password.isEmpty()) {
+        if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
 
             Map<String, Object> responseBody = new LinkedHashMap<>();
             responseBody.put("endpoint", "endpoint @ public");
@@ -55,7 +58,7 @@ public class SignOnController {
 
                     String jwt = Jwts.builder()
                         .setIssuer("app_jwt")
-                        .setSubject( authN.getName())
+                        .setSubject(authN.getName())
                         .claim("role", new ArrayList<>(authN.getAuthorities()).get(0).toString())
                         .setIssuedAt(new Date(System.currentTimeMillis()))
                         .setExpiration(new Date(System.currentTimeMillis() + 3600000))
